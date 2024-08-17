@@ -15,14 +15,33 @@ function playGame(){
         }
     }
 
-    createGrid(4);
-
-    const gridTiles = document.querySelectorAll('.flex-col');
-    gridTiles.forEach((tile)=>{
-        tile.addEventListener('mouseover',(e)=>{
-            e.target.style.backgroundColor = '#000';
+    function removeGrid(){
+        const gridRows = document.querySelectorAll('.flex-row');
+        gridRows.forEach((row)=>{
+            row.remove();
         });
-    });
+    }
+
+    function addBackgroundColorChange(){
+        const gridTiles = document.querySelectorAll('.flex-col');
+        gridTiles.forEach((tile)=>{
+            tile.addEventListener('mouseover',(e)=>{
+                e.target.style.backgroundColor = '#000';
+            });
+        });
+    }
+
+    createGrid(4);
+    addBackgroundColorChange();
+    
+
+    const gridResizeButton = document.querySelector('.resize-grid');
+    gridResizeButton.addEventListener('click', ()=>{
+        const gridSize = prompt('Please enter a size for the grid.');
+        removeGrid();
+        createGrid(gridSize);
+        addBackgroundColorChange()
+    })
 
 }
 
