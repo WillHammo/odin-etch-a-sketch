@@ -1,7 +1,7 @@
 function playGame(){
     
     function createGrid(area){
-        const gridContainer = document.querySelector('main');
+        const gridContainer = document.querySelector('.grid-container');
         for(let i = 0; i < area; i++){
             const gridRow = document.createElement('div');
             gridRow.classList.add('flex-row');
@@ -15,12 +15,14 @@ function playGame(){
         }
     }
 
-    function changeTileColor(tile){
-
-    }
-
-
     createGrid(4);
+
+    const gridTiles = document.querySelectorAll('.flex-col');
+    gridTiles.forEach((tile)=>{
+        tile.addEventListener('mouseover',(e)=>{
+            e.target.style.backgroundColor = '#000';
+        });
+    });
 
 }
 
