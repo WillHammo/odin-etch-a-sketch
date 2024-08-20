@@ -1,15 +1,36 @@
-.flex-row{
+.grid-options {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.flex-col{
+
+.change-grid {
+    padding: 1em;
+    margin: 1em 0 3em 0;
+    border: 1px solid #000;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.grid-container {
+    margin-bottom: 3em;
+    width: 500px;
+    margin: 0 auto;
+}
+
+.grid-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.grid-col {
     flex: 1;
     aspect-ratio: 1 / 1;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid black;
-    max-width: 150px;
-    max-height: 150px;
+    cursor: crosshair;
 }
